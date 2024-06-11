@@ -16,8 +16,10 @@ Es un Proyecto FullStack, por lo que el endpoint utilizado en fetch se creó pre
   - Node.js
   - Express.js
   - Vercel (Despliegue API)
+
 - **Base de Datos:**
   - MySQL (Despliegue en Railway)
+  
 - **Frontend:**
   - Vite
   - React.js
