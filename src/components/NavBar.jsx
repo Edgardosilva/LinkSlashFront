@@ -6,7 +6,7 @@ const NavBar = () => {
             <ul className='flex justify-center gap-10'>
                 <li><a href="https://www.linkedin.com/in/edgardo-silva/">Linkedin</a></li>
                 <li><a href="https://github.com/Edgardosilva">GitHub</a></li>
-                <li><a href="">Repositorio</a></li>
+                <li><a href="https://github.com/Edgardosilva/LinkSlashFront">Repositorio</a></li>
             </ul>
         </nav>
     );
