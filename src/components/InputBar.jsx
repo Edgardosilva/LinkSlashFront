@@ -57,7 +57,7 @@ const InputBar = () => {
             id="outlined-basic"
             label="Ingresa tu enlace"
             variant="outlined"
-            className="w-80"
+            className="w-96"
             onChange={handleChange}
             error={!!error}
             helperText={error}
