@@ -1,6 +1,8 @@
 # Acortador de Enlaces
 
-Este es un proyecto de acortador de enlaces que te permite generar enlaces cortos a partir de URLs largas. Utiliza tecnologías como Node.js, Express.js, MySQL, Vite y React.js para el desarrollo del backend y frontend, respectivamente.
+Este es un proyecto de acortador de enlaces que te permite generar enlaces cortos a partir de URLs largas. Utiliza tecnologías como Node.js, Express.js, MySQL para el Backend, Vite y React.js para el desarrollo frontend, respectivamente.
+
+Es un Proyecto FullStack, por lo que el endpoint utilizado en fetch se creó previamente. Puedes ver el desarrollo backend [aquí](https://github.com/Edgardosilva/LinkSnip).
 
 ## Características
 
@@ -13,31 +15,23 @@ Este es un proyecto de acortador de enlaces que te permite generar enlaces corto
 - **Backend:**
   - Node.js
   - Express.js
-  - Vercel (para el despliegue)
+  - Vercel (Despliegue API)
 - **Base de Datos:**
-  - MySQL (desplegado en Railway)
+  - MySQL (Despliegue en Railway)
 - **Frontend:**
   - Vite
   - React.js
-  - Vercel (para el despliegue)
+  - Vercel (Despliegue front)
 
 ## Instalación
 
 1. Clona este repositorio.
-2. Instala las dependencias del backend:
+
+2. Instala las dependencias del frontend:
 
     ```bash
     npm install
     ```
-
-3. Instala las dependencias del frontend:
-
-    ```bash
-    cd frontend
-    npm install
-    ```
-
-4. Configura la conexión a la base de datos MySQL en el archivo `.env`.
 
 5. Ejecuta el servidor de desarrollo:
 
@@ -49,12 +43,8 @@ Este es un proyecto de acortador de enlaces que te permite generar enlaces corto
 
 ## Demo
 
-Puedes acceder a una demostración en vivo del proyecto [aquí](URL_DEMO).
+Puedes acceder a una demostración en vivo del proyecto [aquí](https://linkslash-roan.vercel.app/).
 
 ## Contribuir
 
 ¡Contribuciones son bienvenidas! Si tienes alguna idea para mejorar este proyecto, por favor abre un issue para discutirla.
-
-## Licencia
-
-Este proyecto está bajo la Licencia [MIT](LICENSE).
