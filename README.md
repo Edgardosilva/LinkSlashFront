@@ -1,4 +1,4 @@
-# Acortador de Enlaces
+# Acortador de Enlaces: LinkSlash
 
 Este es un proyecto de acortador de enlaces que te permite generar enlaces cortos a partir de URLs largas. Utiliza tecnologías como Node.js, Express.js, MySQL para el Backend, Vite y React.js para el desarrollo frontend, respectivamente.
 
