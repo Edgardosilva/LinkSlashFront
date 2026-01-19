@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { z } from "zod";
 import Loader from "../components/Loader";
 
-const urlSchema = z.string().url("El valor debe ser una URL válida");
+const urlSchema = z.string().url("El valor debe ser una URL valida");
 
 const InputBar = () => {
   const [inputValue, setInputValue] = useState("");
