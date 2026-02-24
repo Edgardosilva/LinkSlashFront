@@ -9,8 +9,8 @@ const MainBody = () => {
                 <div className='flex items-center gap-6'>
                     <img src='linkslashLogo.jpg' alt='logo' className='w-28 rounded-xl hidden md:block'/>
                     <div className='flex flex-col justify-around h-28'>
-                        <h1 className=' text-6xl font-bold'>LinkSlash</h1>
-                        <h3 className=' text-[#828282] '>Tu herramienta para enlaces más cortos y prácticos</h3>
+                        <h1 className='text-6xl font-bold text-white'>Link<span className='text-violet-400'>Slash</span></h1>
+                        <h3 className='text-white/50'>Tu herramienta para enlaces más cortos y prácticos</h3>
                     </div>
                 </div>
             </section>
