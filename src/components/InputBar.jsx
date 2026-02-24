@@ -9,6 +9,14 @@ const InputBar = () => {
   const [shortenedUrl, setShortenedUrl] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [apiError, setApiError] = useState("");
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`https://linkslash.vercel.app/${shortenedUrl}`);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -29,15 +37,21 @@ const InputBar = () => {
   const handleShorten = async () => {
     try {
       setIsLoading(true);
+      setApiError("");
+      setShortenedUrl("");
       const response = await fetch("https://linkslash.vercel.app/api/shorten", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ longUrl: inputValue }),
       });
       const data = await response.json();
-      if (!response.ok) setIsLoading(true);
+      if (!response.ok) {
+        setApiError(data.message || "Error al acortar el enlace");
+        return;
+      }
       setShortenedUrl(data.shortUrl);
     } catch (e) {
+      setApiError("No se pudo conectar con el servidor");
       console.error(e);
     } finally {
       setIsLoading(false);
@@ -65,6 +79,9 @@ const InputBar = () => {
         {error && (
           <p className="text-red-400 text-sm mt-1">{error}</p>
         )}
+        {apiError && (
+          <p className="text-red-400 text-sm mt-1">{apiError}</p>
+        )}
       </div>
 
       <div className="font-bold text-xl h-16 mt-10 flex justify-center">
@@ -72,14 +89,17 @@ const InputBar = () => {
           <Loader />
         ) : (
           shortenedUrl && (
-            <a
-              href={`https://linkslash.vercel.app/${shortenedUrl}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-violet-300 hover:text-violet-200 cursor-pointer transition-colors duration-200"
-            >
-              linkslash.vercel.app/{shortenedUrl}
-            </a>
+            <div className="flex flex-col items-center gap-1">
+              <button
+                onClick={handleCopy}
+                className="text-violet-300 hover:text-violet-200 cursor-pointer transition-colors duration-200"
+              >
+                linkslash.vercel.app/{shortenedUrl}
+              </button>
+              <span className="text-white/30 text-xs">
+                {copied ? "✓ ¡Copiado!" : "click para copiar"}
+              </span>
+            </div>
           )
         )}
       </div>
