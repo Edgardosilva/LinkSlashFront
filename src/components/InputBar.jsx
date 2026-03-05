@@ -60,18 +60,18 @@ const InputBar = () => {
 
   return (
     <>
-      <div className="flex justify-center mt-6 flex-col items-center">
-        <form className="flex gap-4" onSubmit={handleSubmit}>
+      <div className="flex justify-center mt-6 flex-col items-center px-4">
+        <form className="flex flex-col md:flex-row gap-3 w-full max-w-[600px]" onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Ingresa tu enlace"
             value={inputValue}
             onChange={handleChange}
-            className="w-72 md:w-[520px] bg-white/10 border border-white/20 text-white placeholder-white/30 px-3 py-[15px] focus:outline-none focus:border-violet-400 transition-all duration-200"
+            className="flex-1 bg-white/10 border border-white/20 text-white placeholder-white/30 px-3 py-[15px] focus:outline-none focus:border-violet-400 transition-all duration-200"
           />
           <button
             type="submit"
-            className="h-[56px] bg-violet-500 hover:bg-violet-600 text-white font-medium px-4 transition-all duration-200"
+            className="w-full md:w-auto bg-violet-500 hover:bg-violet-600 active:bg-violet-700 text-white font-medium px-6 py-4 md:py-0 md:h-[56px] transition-all duration-200"
           >
             Acortar
           </button>
@@ -84,20 +84,20 @@ const InputBar = () => {
         )}
       </div>
 
-      <div className="font-bold text-xl h-16 mt-10 flex justify-center">
+      <div className="font-bold text-base md:text-xl mt-8 flex justify-center px-4">
         {isLoading ? (
           <Loader />
         ) : (
           shortenedUrl && (
-            <div className="flex flex-col items-center gap-1">
+            <div className="flex flex-col items-center gap-1 w-full max-w-[600px]">
               <button
                 onClick={handleCopy}
-                className="text-violet-300 hover:text-violet-200 cursor-pointer transition-colors duration-200"
+                className="text-violet-300 hover:text-violet-200 cursor-pointer transition-colors duration-200 break-all text-center"
               >
                 linkslash.vercel.app/{shortenedUrl}
               </button>
               <span className="text-white/30 text-xs">
-                {copied ? "✓ ¡Copiado!" : "click para copiar"}
+                {copied ? "✓ ¡Copiado!" : "toca para copiar"}
               </span>
             </div>
           )
